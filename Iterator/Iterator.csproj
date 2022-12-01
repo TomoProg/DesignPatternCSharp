@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookShelf.cs" />
+    <Compile Include="BookShelfIterator.cs" />
+    <Compile Include="Iterator.cs" />
+    <Compile Include="Aggregate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
