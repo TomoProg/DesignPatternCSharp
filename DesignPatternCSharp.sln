@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Iterators", "01_Iterator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "01_Iterators\Iterator\Iterator.csproj", "{9C93F387-A7A4-4304-8AD6-753A66C430AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIterator", "MyIterator\MyIterator.csproj", "{04C90D7C-A4CD-4CCC-84AA-32B66DD591FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIterator", "01_Iterators\MyIterator\MyIterator.csproj", "{04C90D7C-A4CD-4CCC-84AA-32B66DD591FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
