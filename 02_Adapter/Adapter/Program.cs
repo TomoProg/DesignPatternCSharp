@@ -10,7 +10,8 @@ namespace Adapter
     {
         static void Main(string[] args)
         {
-            Print p = new PrintBanner("test");
+            //Print p = new PrintBanner("test");
+            Print2 p = new PrintBanner2(new Banner("test"));
             p.PrintWeek();
             p.PrintStrong();
         }
