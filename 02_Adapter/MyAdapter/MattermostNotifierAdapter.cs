@@ -9,9 +9,9 @@ namespace MyAdapter
     public class MattermostNotifierAdapter : INotify
     {
         MattermostNotifier _mattermostNotifier;
-        public MattermostNotifierAdapter(MattermostNotifier mattermostNotifier)
+        public MattermostNotifierAdapter()
         {
-            _mattermostNotifier = mattermostNotifier;
+            _mattermostNotifier = new MattermostNotifier();
         }
 
         public void Notify(string msg)

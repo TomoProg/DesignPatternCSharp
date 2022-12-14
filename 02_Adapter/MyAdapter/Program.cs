@@ -11,7 +11,7 @@ namespace MyAdapter
         static void Main(string[] args)
         {
             //INotify notifier = new SlackNotifier();
-            INotify notifier = new MattermostNotifierAdapter(new MattermostNotifier());
+            INotify notifier = new MattermostNotifierAdapter();
             notifier.Notify("test");
         }
     }
