@@ -10,7 +10,11 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("aaa");
+            Console.WriteLine("Start");
+            var s1 = Singleton.GetInstance();
+            var s2 = Singleton.GetInstance();
+            Console.WriteLine(s1 == s2);
+            Console.WriteLine("End");
         }
     }
 }
