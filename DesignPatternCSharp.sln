@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_Prototypes", "06_Prototy
 		06_Prototypes\README.md = 06_Prototypes\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "06_Prototypes\Prototype\Prototype.csproj", "{677F6A43-FC1D-42C3-A214-FA33A6204EEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPrototype", "06_Prototypes\MyPrototype\MyPrototype.csproj", "{677F6A43-FC1D-42C3-A214-FA33A6204EEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,7 +3,7 @@ using Prototype.Framework;
 
 namespace Prototype
 {
-	public class MessageBox : Product
+	public class MessageBox : Product, ICloneable
 	{
         private char _decochar;
 
