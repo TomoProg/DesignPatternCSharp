@@ -28,7 +28,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_Prototypes", "06_Prototy
 		06_Prototypes\README.md = 06_Prototypes\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPrototype", "06_Prototypes\MyPrototype\MyPrototype.csproj", "{677F6A43-FC1D-42C3-A214-FA33A6204EEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBuilder", "07_Builders\MyBuilder\MyBuilder.csproj", "{677F6A43-FC1D-42C3-A214-FA33A6204EEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_Builder", "07_Builder", "{3EA38DA6-BD58-4E03-81B3-4CC86F777483}"
+	ProjectSection(SolutionItems) = preProject
+		07_Builders\README.md = 07_Builders\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,7 +80,7 @@ Global
 		{B510C25A-E061-40B0-9AE9-4EBE4C7EBC79} = {7DE86E7D-6D95-47B0-A181-AC157927C0BE}
 		{C7186BCD-996E-4C3D-9792-E6B734EF9F06} = {C4EA2D36-BCB3-4989-AA69-37274E5819FD}
 		{726A5E72-C64C-4DB3-A125-4A7EC62F2DB3} = {C4EA2D36-BCB3-4989-AA69-37274E5819FD}
-		{677F6A43-FC1D-42C3-A214-FA33A6204EEA} = {D89CA372-4444-4A18-9B62-E021B1DB3447}
+		{677F6A43-FC1D-42C3-A214-FA33A6204EEA} = {3EA38DA6-BD58-4E03-81B3-4CC86F777483}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}
