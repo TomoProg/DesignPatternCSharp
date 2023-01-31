@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MyAbstractFactory.Factory;
 
 namespace MyAbstractFactory.XlsxFactory
@@ -8,8 +9,12 @@ namespace MyAbstractFactory.XlsxFactory
         public List<object> Parse(string filepath)
         {
             // Excelファイルを読み込んで、行オブジェクトを返す
-            // List<object>に変換する必要ありか
-            return Excel.FileRead(filepath).Rows;
+            var excel = Excel.FileRead(filepath);
+            var rows = Excel.FileRead(filepath).Rows;
+
+            // List<object>に変換する
+            // object型にしないといけないのがなんだか・・・
+            return rows.Select(x => (object)x).ToList();
         }
     }
 }

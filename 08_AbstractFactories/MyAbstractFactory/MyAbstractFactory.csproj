@@ -46,6 +46,7 @@
     <Compile Include="Factory\RowConverter.cs" />
     <Compile Include="Factory\Parser.cs" />
     <Compile Include="Factory\User.cs" />
+    <Compile Include="XlsxFactory\Excel.cs" />
     <Compile Include="XlsxFactory\ExcelParser.cs" />
     <Compile Include="XlsxFactory\ExcelRowConverterForUser.cs" />
     <Compile Include="XlsxFactory\UserFactoryUsingExcel.cs" />

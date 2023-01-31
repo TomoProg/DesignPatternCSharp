@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,16 +34,15 @@ namespace MyAbstractFactory
         // どのファクトリを作るか
         static UserFactory CreateUserFactory(string filename)
         {
-            switch(filename.extention)
+            switch(Path.GetExtension(filename))
             {
-                case "xlsx":
+                case ".xlsx":
                     return new UserFactoryUsingExcel();
-                case "csv":
-                    return new UserFactoryUsingCsv();
+                //case "csv":
+                //    return new UserFactoryUsingCsv();
                 default:
                     throw new Exception();
             }
         }
-    }
     }
 }
