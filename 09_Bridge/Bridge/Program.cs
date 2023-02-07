@@ -18,6 +18,12 @@ namespace Bridge
             d2.DoDisplay();
             d3.DoDisplay();
             d3.MultiDisplay(3);
+
+            Display d4 = new RandomCountDisplay(new StringDisplayImpl("Hello, World. random."));
+            RandomCountDisplay d5 = new RandomCountDisplay(new StringDisplayImpl("Hello, Universe. random."));
+
+            d4.DoDisplay();
+            d5.RandomDisplay();
         }
     }
 }

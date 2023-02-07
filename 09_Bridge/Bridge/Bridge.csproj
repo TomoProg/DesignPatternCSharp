@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandomCountDisplay.cs" />
     <Compile Include="CountDisplay.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="StringDisplayImpl.cs" />
