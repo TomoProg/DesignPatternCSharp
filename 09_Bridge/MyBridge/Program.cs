@@ -11,7 +11,7 @@ namespace MyBridge
         static void Main(string[] args)
         {
             {
-                SignUpThanksNotifier d1 = new SignUpThanksNotifier(new Slack("general"));
+                SignUpNotifier d1 = new SignUpNotifier(new Slack("general"));
                 d1.Send();
                 Console.WriteLine();
 
@@ -20,7 +20,7 @@ namespace MyBridge
                 Console.WriteLine();
             }
             {
-                SignUpThanksNotifier d1 = new SignUpThanksNotifier(new Mail("sample@sample.com"));
+                SignUpNotifier d1 = new SignUpNotifier(new Mail("sample@sample.com"));
                 d1.Send();
                 Console.WriteLine();
 

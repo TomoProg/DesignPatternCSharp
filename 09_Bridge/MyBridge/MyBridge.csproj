@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SignUpThanksNotifier.cs" />
+    <Compile Include="SignUpNotifier.cs" />
     <Compile Include="SignUpPremiumNotifier.cs" />
     <Compile Include="Notifier.cs" />
     <Compile Include="Slack.cs" />

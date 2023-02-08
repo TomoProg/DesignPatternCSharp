@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyBridge
 {
-    public class SignUpThanksNotifier : Notifier
+    public class SignUpNotifier : Notifier
     {
-        public SignUpThanksNotifier(IPost impl) : base(impl) { }
+        public SignUpNotifier(IPost impl) : base(impl) { }
 
         public void Send()
         {
