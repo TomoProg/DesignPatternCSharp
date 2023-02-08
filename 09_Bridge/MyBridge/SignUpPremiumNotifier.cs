@@ -9,13 +9,16 @@ namespace MyBridge
     // プレミアム会員登録した際の通知をまとめたクラス
     public class SignUpPremiumNotifier : Notifier
     {
-        public SignUpPremiumNotifier(IPost impl) : base(impl) { }
+        private SignUpThanksNotifier _thanks;
+        public SignUpPremiumNotifier(IPost impl) : base(impl)
+        {
+            _thanks = new SignUpThanksNotifier(impl);
+        }
 
         public void Send()
         {
             // 登録完了メールを送信
-            var a = new SignUpThanksNotifier(base._impl);
-            a.Send();
+            _thanks.Send();
 
             // プレミアム会員の機能紹介メールを送信
             base.Post("プレミアム会員の機能紹介");
