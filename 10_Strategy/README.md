@@ -10,6 +10,7 @@
 ただし、テスト環境で外部サイトにアクセスしてしまうと、外部サイトに負荷をかけてしまうためテストのときは外部には繋ぎたくない。  
 
 ## クラス図の説明
+https://lucid.app/lucidchart/2ebbfa91-0ba3-4779-8e31-e56fa9447d69/edit?view_items=gtixYWsKElfa&invitationId=inv_7d2ed273-4ab1-432a-afaa-cf9ba3be0d83
 
 ## ソースコードの説明
 
