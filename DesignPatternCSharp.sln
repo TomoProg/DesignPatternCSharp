@@ -63,6 +63,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unreadable", "09_Bridge\Unr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBridge", "09_Bridge\MyBridge\MyBridge.csproj", "{1413D4FE-FCBB-45E8-A540-F9FCDAA22714}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10_Strategy", "10_Strategy", "{6066047C-E7FD-4FDB-9EDE-CE901EE278A2}"
+	ProjectSection(SolutionItems) = preProject
+		10_Strategy\README.md = 10_Strategy\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStrategy", "10_Strategy\MyStrategy\MyStrategy.csproj", "{28AB1972-7ED1-407F-B1F6-F4559001C8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStrategyTest", "UnitTestProject1\MyStrategyTest.csproj", "{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +138,14 @@ Global
 		{1413D4FE-FCBB-45E8-A540-F9FCDAA22714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1413D4FE-FCBB-45E8-A540-F9FCDAA22714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1413D4FE-FCBB-45E8-A540-F9FCDAA22714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28AB1972-7ED1-407F-B1F6-F4559001C8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AB1972-7ED1-407F-B1F6-F4559001C8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AB1972-7ED1-407F-B1F6-F4559001C8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AB1972-7ED1-407F-B1F6-F4559001C8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +167,8 @@ Global
 		{10A10F73-76A6-4078-AB2A-08ADF40CF037} = {5190073E-68CF-4A25-97AA-254740F7303D}
 		{5C254187-EB71-4D20-ACAA-0A3225831D9B} = {5190073E-68CF-4A25-97AA-254740F7303D}
 		{1413D4FE-FCBB-45E8-A540-F9FCDAA22714} = {5190073E-68CF-4A25-97AA-254740F7303D}
+		{28AB1972-7ED1-407F-B1F6-F4559001C8B3} = {6066047C-E7FD-4FDB-9EDE-CE901EE278A2}
+		{BCC18A50-9AC8-41DD-8D01-9228D4CD31DB} = {6066047C-E7FD-4FDB-9EDE-CE901EE278A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}
