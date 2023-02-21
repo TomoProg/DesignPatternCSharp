@@ -7,12 +7,21 @@ using System.Net.Http;
 
 namespace MyStrategy
 {
-    class MyHttpClient : IMyHttpClient
+    class MyHttpClient
     {
-        public string GetHTML(string url)
+        public virtual string GetHTML(string url)
         {
             var c = new HttpClient();
             return c.GetStringAsync(url).Result;
+        }
+
+        public virtual string Post(string url, HttpContent content)
+        {
+            var c = new HttpClient();
+
+            // 合ってるかわからん。
+            return c.PostAsync(url, content).Result
+                .Content.ReadAsStringAsync().Result;
         }
     }
 }
