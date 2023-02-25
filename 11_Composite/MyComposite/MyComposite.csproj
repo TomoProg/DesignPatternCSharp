@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67E9C88E-AFC8-4FAD-B5F0-2C2D471032DF}</ProjectGuid>
+    <ProjectGuid>{345667BF-0B29-4DC2-805C-FE083569012E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Composite</RootNamespace>
-    <AssemblyName>Composite</AssemblyName>
+    <RootNamespace>MyComposite</RootNamespace>
+    <AssemblyName>MyComposite</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directory.cs" />
-    <Compile Include="File.cs" />
+    <Compile Include="StringObject.cs" />
+    <Compile Include="JsonObject.cs" />
     <Compile Include="Entry.cs" />
+    <Compile Include="Attribute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
