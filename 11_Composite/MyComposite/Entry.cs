@@ -8,5 +8,6 @@ namespace Composite
 {
     public abstract class Entry
     {
+        
     }
 }
