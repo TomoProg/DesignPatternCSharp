@@ -43,9 +43,9 @@ namespace Composite
             {
                 { "name", "yamamoto" },
                 { "blood", "A" },
-                //{ "height", 160 },
+                { "height", 160 },
                 { "other", new Dictionary<string, object>() {
-                    //{ "hobby", new string[] { "tennis", "soccer" } },
+                    { "hobby", new string[] { "tennis", "soccer" } },
                     { "sex", "male" }}
                 }
             };
@@ -53,14 +53,6 @@ namespace Composite
             //var s = new JsonSerializer(u);
             Console.WriteLine(JsonSerializer.Serialize(u));
         }
-    }
-
-
-    public class User
-    {
-        public string Name { get; set; }
-        public string Blood { get; set; }
-        public Dictionary<string, object> Other { get; set; }
     }
 
     public class JsonSerializer
@@ -77,15 +69,7 @@ namespace Composite
             foreach (var kv in obj)
             {
                 var attr = AttributeCreator.Create(kv.Key, kv.Value);
-                if (attr.GetType() == typeof(RootAttribute))
-                {
-                    attr.Key = kv.Key;
-                    result.Add(Serialize2((RootAttribute)attr, (Dictionary<string, object>)kv.Value));
-                }
-                else
-                {
-                    result.Add(attr);
-                }
+                result.Add(attr);
             }
 
             return result;
@@ -105,17 +89,29 @@ namespace Composite
     {
         public static Attribute2 Create(string k, object v)
         {
-            switch (v.GetType().Name)
+            var t = v.GetType();
+
+            if(t == typeof(string))
             {
-                case "String":
-                    return new StringAttribute() { Key = k, Value = v };
-                case "Int32":
-                    return new NumberAttribute() { Key = k, Value = v };
-                case "Dictionary`2":
-                    return new RootAttribute() { Key = k };
-                default:
-                    throw new NotImplementedException();
+                return new StringAttribute() { Key = k, Value = v };
             }
+
+            if(t == typeof(int))
+            {
+                return new NumberAttribute() { Key = k, Value = v };
+            }
+
+            if (t == typeof(Dictionary<string, object>))
+            {
+                var a = new RootAttribute() { Key = k };
+                foreach (var kv in (Dictionary<string, object>)v)
+                {
+                    a.Add(Create(kv.Key, kv.Value));
+                }
+                return a;
+            }
+
+            throw new NotImplementedException();
         }
     }
 
