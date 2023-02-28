@@ -52,17 +52,24 @@ namespace Decorator
 
         public override int GetColumns()
         {
-            throw new NotImplementedException();
+            return _s.Length;
         }
 
         public override int GetRows()
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public override string GetRowText(int row)
         {
-            throw new NotImplementedException();
+            if(row == 0)
+            {
+                return _s;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 
@@ -88,19 +95,19 @@ namespace Decorator
         // これはDisplayの実装
         public override int GetColumns()
         {
-            throw new NotImplementedException();
+            return 1 + _display.GetColumns() + 1;
         }
 
         // これはDisplayの実装
         public override int GetRows()
         {
-            throw new NotImplementedException();
+            return _display.GetRows();
         }
 
         // これはDisplayの実装
         public override string GetRowText(int row)
         {
-            throw new NotImplementedException();
+            return _borderChar + _display.GetRowText(row) + _borderChar;
         }
     }
 
@@ -114,13 +121,13 @@ namespace Decorator
         // これはDisplayの実装
         public override int GetColumns()
         {
-            throw new NotImplementedException();
+            return 1 + _display.GetColumns() + 1;
         }
 
         // これはDisplayの実装
         public override int GetRows()
         {
-            throw new NotImplementedException();
+            return 1 + _display.GetRows() + 1;
         }
 
         // これはDisplayの実装

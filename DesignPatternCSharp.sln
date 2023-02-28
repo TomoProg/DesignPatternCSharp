@@ -83,6 +83,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyComposite", "11_Composite
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyComposite2", "11_Composite\MyComposite2\MyComposite2.csproj", "{988491DA-3CB2-495B-BA12-7588CBC40EC5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12_Decorator", "12_Decorator", "{A3813C80-3F74-46DF-9D2F-C678D4E14CC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "12_Decorator\Decorator\Decorator.csproj", "{C2F4C296-84C5-41D9-B81F-1B32CB98D66F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +173,10 @@ Global
 		{988491DA-3CB2-495B-BA12-7588CBC40EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{988491DA-3CB2-495B-BA12-7588CBC40EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{988491DA-3CB2-495B-BA12-7588CBC40EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F4C296-84C5-41D9-B81F-1B32CB98D66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F4C296-84C5-41D9-B81F-1B32CB98D66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F4C296-84C5-41D9-B81F-1B32CB98D66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F4C296-84C5-41D9-B81F-1B32CB98D66F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +203,7 @@ Global
 		{67E9C88E-AFC8-4FAD-B5F0-2C2D471032DF} = {98B0ADAB-519A-4D7A-9F98-DCA0AB65E8AD}
 		{345667BF-0B29-4DC2-805C-FE083569012E} = {98B0ADAB-519A-4D7A-9F98-DCA0AB65E8AD}
 		{988491DA-3CB2-495B-BA12-7588CBC40EC5} = {98B0ADAB-519A-4D7A-9F98-DCA0AB65E8AD}
+		{C2F4C296-84C5-41D9-B81F-1B32CB98D66F} = {A3813C80-3F74-46DF-9D2F-C678D4E14CC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}
