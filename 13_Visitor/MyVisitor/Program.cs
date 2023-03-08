@@ -10,19 +10,22 @@ namespace MyVisitor
     {
         static void Main(string[] args)
         {
-            List<Element> elements = new List<Element>();  // TODO: こいつをクラス化（ObjectStructure
+            var elements = new ElementList();
             elements.Add(new User() { Id = 1, FirstName = "tomoki", LastName = "yamamoto" });
             elements.Add(new Busho() { Id = 1, Name = "総務" });
+            elements.Accept(new CsvVisitor());
+            elements.Accept(new JsonVisitor());
         }
     }
 
+    // Visitor
     public abstract class Visitor
     {
         public abstract void Visit(User user);
         public abstract void Visit(Busho busho);
     }
 
-    //TODO: Visitor役 2つ作りたい
+    // ConcreateVisitor
     public class CsvVisitor : Visitor
     {
         public override void Visit(User user)
@@ -36,11 +39,34 @@ namespace MyVisitor
         }
     }
 
+    // ConcreateVisitor
+    public class JsonVisitor : Visitor
+    {
+        public override void Visit(User user)
+        {
+            Console.WriteLine($@"{{
+  id: {user.Id},
+  first_name: {user.FirstName},
+  last_name: {user.LastName}
+}}");
+        }
+
+        public override void Visit(Busho busho)
+        {
+            Console.WriteLine($@"{{
+  id: {busho.Id},
+  name: {busho.Name}
+}}");
+        }
+    }
+
+    // Element
     public interface Element
     {
         void Accept(Visitor v);
     }
 
+    // ConcreateElement
     public class Busho : Element
     {
         public int Id { get; set; }
@@ -52,6 +78,7 @@ namespace MyVisitor
         }
     }
 
+    // ConcreateElement
     public class User : Element
     {
         public int Id { get; set; }
@@ -61,6 +88,29 @@ namespace MyVisitor
         public void Accept(Visitor v)
         {
             v.Visit(this);
+        }
+    }
+
+    // ObjectStructure
+    public class ElementList
+    {
+        private List<Element> _elementList;
+        public ElementList()
+        {
+            _elementList = new List<Element>();
+        }
+
+        public void Add(Element e)
+        {
+            _elementList.Add(e);
+        }
+
+        public void Accept(Visitor v)
+        {
+            foreach (var e in _elementList)
+            {
+                e.Accept(v);
+            }
         }
     }
 }
