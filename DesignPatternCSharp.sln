@@ -105,6 +105,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14_ChainOfResponsibility", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChainOfResponsibility", "14_ChainOfResponsibility\MyChainOfResponsibility\MyChainOfResponsibility.csproj", "{B295F896-2C7D-4482-9F46-B064D7D9FB58}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16_Mediator", "16_Mediator", "{67C81DD7-F430-489F-8CA7-27392D58364D}"
+	ProjectSection(SolutionItems) = preProject
+		16_Mediator\README.md = 16_Mediator\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMediator", "16_Mediator\MyMediator\MyMediator.csproj", "{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +218,10 @@ Global
 		{B295F896-2C7D-4482-9F46-B064D7D9FB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B295F896-2C7D-4482-9F46-B064D7D9FB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B295F896-2C7D-4482-9F46-B064D7D9FB58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +253,7 @@ Global
 		{74E7A3FB-5B87-446E-B5F4-491B3C9B25D3} = {8CC39649-3DB3-4F95-A22C-2D8C9ACFA984}
 		{45BC39A4-72CB-49BB-A734-12F0DB24959E} = {8CC39649-3DB3-4F95-A22C-2D8C9ACFA984}
 		{B295F896-2C7D-4482-9F46-B064D7D9FB58} = {3A09091F-1D96-468C-975E-B548665E65CC}
+		{3B215881-97AD-4C22-8BD3-D8C1E2D7317C} = {67C81DD7-F430-489F-8CA7-27392D58364D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}

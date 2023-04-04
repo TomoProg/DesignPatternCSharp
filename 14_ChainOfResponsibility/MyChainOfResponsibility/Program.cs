@@ -21,6 +21,12 @@ namespace MyChainOfResponsibility
             // 血液型不正のパターン
             CreateUser(id: 1, name: "tomoprog", blood: "J");
             Console.WriteLine("=========================");
+
+
+            UserValidator uv1 = new UserIdValidator();
+            UserValidator uv2 = new UserNameValidator();
+            UserValidator uv3 = new UserBloodValidator();
+            uv1.SetNext(uv2).SetNext(uv3);
         }
 
         static void CreateUser(int id, string name, string blood)
@@ -35,6 +41,12 @@ namespace MyChainOfResponsibility
                 Console.WriteLine(ex);
             }
         }
+    }
+
+
+    public class ValidatorBuilder
+    {
+
     }
 
     // Client役
