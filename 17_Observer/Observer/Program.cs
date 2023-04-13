@@ -32,7 +32,9 @@ namespace Observer
     }
 
     // Updateするときに、観察される側そのものを渡したいので、ジェネリクスにした。
-    // INotifiableToObserverがGetTextみたいなメソッドを持ってればいいのか。
+    // INotifiableToObserverがGetTextみたいなメソッドを持ってればいいのか？
+    // →これをしてしまうとSubjectが増えるたびにインターフェースが増える。
+    //   ジェネリクスにしておけば増えることもなく共通で使える。
     interface IObserver<T>
     {
         void Update(T obj);
@@ -40,7 +42,7 @@ namespace Observer
 
     interface INotifableToObserver<T>
     {
-        List<IObserver<TextArea>> Observers { get; set; }
+        List<IObserver<T>> Observers { get; set; }
         void AddObserver(IObserver<T> observer);
         void NotifyObservers();
     }

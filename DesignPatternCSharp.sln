@@ -113,6 +113,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMediator", "16_Mediator\MyMediator\MyMediator.csproj", "{3B215881-97AD-4C22-8BD3-D8C1E2D7317C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17_Observer", "17_Observer", "{9E61670C-D48D-4485-972C-0B71F04EF5EF}"
+	ProjectSection(SolutionItems) = preProject
+		17_Observer\README.md = 17_Observer\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "17_Observer\Observer\Observer.csproj", "{2E9682DF-9B8D-403D-B1EB-2BE19DC4DB21}"
 EndProject
