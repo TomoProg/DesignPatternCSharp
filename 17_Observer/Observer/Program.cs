@@ -35,35 +35,42 @@ namespace Observer
     // INotifiableToObserverがGetTextみたいなメソッドを持ってればいいのか？
     // →これをしてしまうとSubjectが増えるたびにインターフェースが増える。
     //   ジェネリクスにしておけば増えることもなく共通で使える。
-    interface IObserver<T>
+    interface IObserver<T> where T:class
     {
         void Update(T obj);
     }
 
-    interface INotifableToObserver<T>
+    interface INotifableToObserver<T> where T : class
     {
-        List<IObserver<T>> Observers { get; set; }
+        List<IObserver<T>> Observers { get; }
         void AddObserver(IObserver<T> observer);
         void NotifyObservers();
     }
 
-    class TextArea : INotifableToObserver<TextArea>
+    abstract class NotifyObject<T> : INotifableToObserver<T> where T : class
     {
-        public List<IObserver<TextArea>> Observers { get; set; } = new List<IObserver<TextArea>>();
-        public string Text { get; private set; }
+        public List<IObserver<T>> Observers { get; } = new List<IObserver<T>>();
 
-        public void AddObserver(IObserver<TextArea> observer)
+        public void AddObserver(IObserver<T> observer)
         {
             Observers.Add(observer);
         }
 
         public void NotifyObservers()
         {
-            foreach(var o in Observers)
+            foreach (var o in Observers)
             {
-                o.Update(this);
+                // このクラスを継承した先のクラスを渡したいんだけどできない・・・？
+                // (T)this と書いてキャストしてみたけどコンパイルエラーだった。
+                // (T)((object)this) こんな感じで一回object型にキャストしてから、T型にキャストしたらいけた。
+                o.Update((T)((object)this));
             }
         }
+    }
+
+    class TextArea : NotifyObject<TextArea>
+    {
+        public string Text { get; private set; }
 
         public void AddText(ConsoleKey key)
         {
