@@ -120,6 +120,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "17_Observer\Observer\Observer.csproj", "{2E9682DF-9B8D-403D-B1EB-2BE19DC4DB21}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18_Memento", "18_Memento", "{31D764CC-6288-4495-A6C5-432FBEB41CE8}"
+	ProjectSection(SolutionItems) = preProject
+		18_Memento\README.md = 18_Memento\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento", "18_Memento\Memento\Memento.csproj", "{C5D888A5-68D4-4A47-B9B3-A17683E484D0}"
 EndProject
