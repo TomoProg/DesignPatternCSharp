@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,19 @@ namespace State
             for(int i = 0; i < 24; i++)
             {
                 var dt = new DateTime(2023, 4, 26, i, 0, 0);
+                Console.WriteLine($"時刻：{dt}");
+                app.SetClock(dt);
+                app.Show();
+                Console.WriteLine("------------------");
+            }
+
+            Console.WriteLine("------------------");
+            Console.WriteLine("土曜日テスト");
+            Console.WriteLine("------------------");
+
+            for (int i = 0; i < 24; i++)
+            {
+                var dt = new DateTime(2023, 4, 22, i, 0, 0);    // 土曜日
                 Console.WriteLine($"時刻：{dt}");
                 app.SetClock(dt);
                 app.Show();
@@ -53,13 +67,20 @@ namespace State
     {
         public abstract int? Price { get; }
 
+        // どういう条件のときにどの状態になるのかをDictionaryで表現する。
+        protected abstract Dictionary<Func<bool>, State> CreateStateChangeConditions(DateTime dt);
+
         public virtual void DoClock(FeeBoard context, DateTime dt)
         {
-            // TODO: この処理、値が変わるところを取り出せれば、いい感じにテンプレートメソッドにできそう。
-            //if (19 <= dt.Hour)
-            //{
-            //    context.ChangeState(new FeeBoardNightState());
-            //}
+            foreach(var kv in CreateStateChangeConditions(dt))
+            {
+                // TODO: Dictionaryだと順不同になりそう・・・。
+                if (kv.Key.Invoke())
+                {
+                    context.ChangeState(kv.Value);
+                    break;
+                }
+            }
         }
 
         public virtual string BuildMessage()
@@ -74,25 +95,25 @@ namespace State
     {
         public override int? Price { get; } = 100;
 
-        public override void DoClock(FeeBoard context, DateTime dt)
+        protected override Dictionary<Func<bool>, State> CreateStateChangeConditions(DateTime dt)
         {
-            // 昼 -> 夜
-            // 19時からは夜に変わる
-            if(19 <= dt.Hour || dt.Hour < 5)
+            return new Dictionary<Func<bool>, State>()
             {
-                context.ChangeState(new FeeBoardNightState());
-            }
+                // TODO:ここが神メソッド化してしまう。
+                // 土曜日だったら土曜日用のクラスでデコレートしてくれれるようなビルダーがいればいいのか
+                { () => 19 <= dt.Hour || dt.Hour < 5,  new FeeBoardNightState() }
+            };
         }
     }
 
     // TODO: デコレータパターン
-    // 9時から19時までが昼時間
-    // ConcreateState役
-    //public class 土曜日用のFeeBoardDayState
-    //{
-    //    FeeBoardDayState state;
-    //    public int? Price => state.Price * 2;
-    //}
+    // 土曜日の昼時間用のやつ
+    // デコレータパターンじゃなくて、単純に継承しただけになった。
+    // 継承して、Priceだけoverrideすればよくね？
+    public class FeeBoardDayStateForSaturday : FeeBoardDayState
+    {
+        public override int? Price => base.Price * 2;
+    }
 
     // 19時から5時までが夜時間
     // ConcreateState役
@@ -100,14 +121,14 @@ namespace State
     {
         public override int? Price { get; } = 200;
 
-        public override void DoClock(FeeBoard context, DateTime dt)
+        protected override Dictionary<Func<bool>, State> CreateStateChangeConditions(DateTime dt)
         {
-            // 夜 -> 閉店
-            // 5時 ～ 9時までは閉店
-            if (5 <= dt.Hour && dt.Hour < 9)
+            return new Dictionary<Func<bool>, State>()
             {
-                context.ChangeState(new FeeBoardCloseState());
-            }
+                // 夜 -> 閉店
+                // 5時 ～ 9時までは閉店
+                { () => 5 <= dt.Hour && dt.Hour < 9,  new FeeBoardCloseState() }
+            };
         }
     }
 
@@ -117,14 +138,16 @@ namespace State
     {
         public override int? Price { get; } = null;
 
-        public override void DoClock(FeeBoard context, DateTime dt)
+        protected override Dictionary<Func<bool>, State> CreateStateChangeConditions(DateTime dt)
         {
-            // 閉店 -> 昼
-            // 9時から開店
-            if (9 <= dt.Hour && dt.Hour < 19)
+            return new Dictionary<Func<bool>, State>()
             {
-                context.ChangeState(new FeeBoardDayState());
-            }
+                // 閉店 -> 昼
+                // 9時から開店
+                // 土曜日の場合は土曜日ようのやつを使う
+                { () => 9 <= dt.Hour && dt.Hour < 19 && dt.DayOfWeek == DayOfWeek.Saturday,  new FeeBoardDayStateForSaturday() },
+                { () => 9 <= dt.Hour && dt.Hour < 19,  new FeeBoardDayState() }
+            };
         }
 
         public override string BuildMessage()
