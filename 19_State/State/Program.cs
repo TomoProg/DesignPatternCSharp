@@ -106,6 +106,37 @@ namespace State
         }
     }
 
+    class StateBuilder
+    {
+        public static State Build(DateTime dt)
+        {
+            // Stateもチェーンさせる
+            State result = null;
+            if(19 <= dt.Hour || dt.Hour < 5)
+            {
+                result = new FeeBoardNightState();
+            }
+            else if(5 <= dt.Hour && dt.Hour < 9)
+            {
+                result = new FeeBoardCloseState();
+            }
+            else
+            {
+                result = new FeeBoardDayState();
+            }
+
+            // Decoratorをチェーンさせる
+            if(dt.DayOfWeek == DayOfWeek.Saturday)
+            {
+                result = new HolidayDecorator(result);
+            }
+
+            // あらゆる条件を網羅して作ってくれる。
+            return result;
+        }
+    }
+
+
     // TODO: デコレータパターン
     // 土曜日の昼時間用のやつ
     // デコレータパターンじゃなくて、単純に継承しただけになった。
@@ -113,6 +144,31 @@ namespace State
     public class FeeBoardDayStateForSaturday : FeeBoardDayState
     {
         public override int? Price => base.Price * 2;
+    }
+
+    // TODO: デコレータパターン
+    // 土曜日の昼時間用のやつ
+    // デコレータパターンじゃなくて、単純に継承しただけになった。
+    // 継承して、Priceだけoverrideすればよくね？
+    public class HolidayDecorator : State
+    {
+        private State _state;
+        public HolidayDecorator(State state)
+        {
+            _state = state;
+        }
+
+        public override int? Price {
+            get
+            {
+                return _state.Price * 2;
+            }
+        }
+
+        protected override Dictionary<Func<bool>, State> CreateStateChangeConditions(DateTime dt)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     // 19時から5時までが夜時間
