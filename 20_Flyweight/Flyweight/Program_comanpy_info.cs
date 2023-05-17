@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Flyweight
+// 宿題: CompanyInfoに詰め替える処理を移動したバージョン
+namespace Flyweight2
 {
     // Client役
     class Program
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             while(true)
             {
@@ -32,6 +33,7 @@ namespace Flyweight
 
     // FlyweightFactory役
     // こいつの責務はFlyweight役を作ること
+    // というより作ったFlyweight役をキャッシュしておく
     public class CompanyInfoFactory
     {
         private Dictionary<string, CompanyInfo> _pool = new Dictionary<string, CompanyInfo>();
@@ -49,19 +51,8 @@ namespace Flyweight
         {
             if(!_pool.ContainsKey(code))
             {
-                // 宿題: このAPI呼んで、CompanyInfoに詰め替える処理はここにあるべきか？
-                // 企業の情報をどこかから取得する
-                var response = YahooFinanceApi.Call(code);
-
-                // Apiの結果をアプリで使える形に変換
-                var ci = new CompanyInfo()
-                {
-                    Code = code,
-                    Name = response.Name,
-                    StockPrice = response.StockPrice,
-                    Sales = response.Sales
-                    
-                };
+                // 処理をCompanyInfoクラスに移動した
+                var ci = CompanyInfo.CreateFromExternalData(code);
                 _pool[code] = ci;
             }
             return _pool[code];
@@ -80,6 +71,24 @@ namespace Flyweight
         public int StockPrice { get; set; }
         // 売上高
         public int Sales { get; set; }
+
+        // ここに移動させた
+        // こうすることで、他のクラスからでも使えるようになった。
+        public static CompanyInfo CreateFromExternalData(string code)
+        {
+            // 企業の情報をどこかから取得する
+            var response = YahooFinanceApi.Call(code);
+
+            // Apiの結果をアプリで使える形に変換
+            return new CompanyInfo()
+            {
+                Code = code,
+                Name = response.Name,
+                StockPrice = response.StockPrice,
+                Sales = response.Sales
+
+            };
+        }
     }
 
     // その他
