@@ -137,6 +137,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20_Flyweight", "20_Flyweigh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight", "20_Flyweight\Flyweight\Flyweight.csproj", "{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21_Proxy", "21_Proxy", "{3C70EC97-9A81-47FB-8411-DAE516B8CF51}"
+	ProjectSection(SolutionItems) = preProject
+		21_Proxy\README.md = 21_Proxy\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "21_Proxy\Proxy\Proxy.csproj", "{6835C25D-7BE1-4404-B4A0-10B42E91C732}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -263,6 +270,10 @@ Global
 		{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -299,6 +310,7 @@ Global
 		{C5D888A5-68D4-4A47-B9B3-A17683E484D0} = {31D764CC-6288-4495-A6C5-432FBEB41CE8}
 		{20EE7C96-5EDC-41F4-AD9F-265D8FED74C7} = {757C3010-2C08-4D9F-854E-6E2AE09F70AE}
 		{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A} = {A0115DEE-0CE2-4A9B-9416-CB63EACF32E9}
+		{6835C25D-7BE1-4404-B4A0-10B42E91C732} = {3C70EC97-9A81-47FB-8411-DAE516B8CF51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}
