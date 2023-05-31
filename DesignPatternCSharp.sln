@@ -144,6 +144,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "21_Proxy", "21_Proxy", "{3C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "21_Proxy\Proxy\Proxy.csproj", "{6835C25D-7BE1-4404-B4A0-10B42E91C732}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "22_Command", "22_Command", "{F4B96379-730A-47FA-9DFB-4A14F1F729C3}"
+	ProjectSection(SolutionItems) = preProject
+		22_Command\README.md = 22_Command\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "22_Command\Command\Command.csproj", "{417A157D-9C89-48C1-8274-7A767163B088}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -274,6 +281,10 @@ Global
 		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6835C25D-7BE1-4404-B4A0-10B42E91C732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417A157D-9C89-48C1-8274-7A767163B088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417A157D-9C89-48C1-8274-7A767163B088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417A157D-9C89-48C1-8274-7A767163B088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417A157D-9C89-48C1-8274-7A767163B088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -311,6 +322,7 @@ Global
 		{20EE7C96-5EDC-41F4-AD9F-265D8FED74C7} = {757C3010-2C08-4D9F-854E-6E2AE09F70AE}
 		{261BEA17-AD6E-4A8B-8E71-48E456F3CA1A} = {A0115DEE-0CE2-4A9B-9416-CB63EACF32E9}
 		{6835C25D-7BE1-4404-B4A0-10B42E91C732} = {3C70EC97-9A81-47FB-8411-DAE516B8CF51}
+		{417A157D-9C89-48C1-8274-7A767163B088} = {F4B96379-730A-47FA-9DFB-4A14F1F729C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C96BABDD-03E4-470C-B921-A07F2D5E7125}
