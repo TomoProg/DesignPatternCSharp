@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RiceCookerApi\RiceCookerApi.csproj">
+      <Project>{f782fa48-9c72-4066-b7ed-aeb691d4939b}</Project>
+      <Name>RiceCookerApi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
