@@ -22,5 +22,10 @@ namespace Interpreter
             }
             _node.Parse(context);
         }
+
+        public void Execute()
+        {
+            _node.Execute();
+        }
     }
 }

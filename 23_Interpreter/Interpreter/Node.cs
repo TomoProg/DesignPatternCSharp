@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Interpreter
 {
-    public interface Node
+    public interface Node : Executor
     {
         void Parse(Context context);
+    }
+
+    public interface Executor
+    {
+        void Execute();
     }
 }

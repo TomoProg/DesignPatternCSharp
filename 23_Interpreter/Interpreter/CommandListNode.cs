@@ -25,10 +25,15 @@ namespace Interpreter
                     break;
                 }
 
-                Node commandNode = new CommandListNode();
+                Node commandNode = new CommandNode();
                 commandNode.Parse(context);
                 _list.Add(commandNode);
             }
+        }
+
+        public void Execute()
+        {
+            _list.ForEach(n => n.Execute());
         }
     }
 }

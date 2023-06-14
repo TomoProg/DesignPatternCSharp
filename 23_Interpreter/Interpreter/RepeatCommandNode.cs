@@ -19,5 +19,13 @@ namespace Interpreter
             _commandListNode = new CommandListNode();
             _commandListNode.Parse(context);
         }
+
+        public void Execute()
+        {
+            for(int i = 0; i < _number; i++)
+            {
+                _commandListNode.Execute();
+            }
+        }
     }
 }

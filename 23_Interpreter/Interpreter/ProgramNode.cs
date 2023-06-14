@@ -9,11 +9,17 @@ namespace Interpreter
     public class ProgramNode : Node
     {
         private Node _commandListNode;
+
         public void Parse(Context context)
         {
             context.SkipToken("program");
             _commandListNode = new CommandListNode();
             _commandListNode.Parse(context);
+        }
+
+        public void Execute()
+        {
+            _commandListNode.Execute();
         }
     }
 }
