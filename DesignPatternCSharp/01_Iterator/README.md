@@ -15,7 +15,7 @@
 - 特定の性別だけ数え上げる
 
 ## クラス図
-
+https://drive.google.com/file/d/1VMDfuDcjo3joFtBaWz_q97aI2VRvEafq/view?usp=drive_link
 
 ## 所感
 Iteratorの責務は数え上げる部分だけ。
