@@ -2,23 +2,43 @@ using System;
 
 namespace _01_Iterator
 {
-    public class UserList : Aggregator
+    public class UserList : Aggregator<User>
     {
-        User[] _userList;
+        List<User> _userList;
 
         public UserList()
         {
-            _userList = new User[]();
+            _userList = new List<User>();
         }
 
-        public Add(User user)
+        public void Add(User user)
         {
             _userList.Add(user);
         }
 
-        Iterable GetIterator()
+        public User At(int index)
+        {
+            return _userList[index];
+        }
+
+        public int Length()
+        {
+            return _userList.Count();
+        }
+
+        public Iterable<User> GetIterator()
         {
             return new UserListIterator(this);
         }
+
+        public Iterable<User> GetMaleIterator()
+        {
+            return new UserListMaleIterator(this);
+        }
+
+        //public Iterable<User> GetIterator(Func<User, bool> clause)
+        //{
+        //    return new UserListWhereIterator(this, clause);
+        //}
     }
 }

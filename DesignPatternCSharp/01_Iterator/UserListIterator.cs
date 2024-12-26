@@ -15,10 +15,10 @@ namespace _01_Iterator
         
         public bool HasNext()
         {
-            return _userList.Length > _pos;
+            return _userList.Length() > _pos;
         }
 
-        User Next()
+        public User Next()
         {
             User result = _userList.At(_pos);
             _pos += 1;

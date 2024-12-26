@@ -4,7 +4,7 @@ namespace _01_Iterator
 {
     public class User
     {
-        enum SexType
+        public enum SexType
         {
             Male,
             Female,
